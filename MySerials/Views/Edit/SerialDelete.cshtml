@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "SerialDelete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model MySerials.Models.Serial
+<h2>Удаление сериала:</h2>
+<dl>
+    @*<dt>Название</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Id)
+    </dd>*@
+
+    <dt>Название:</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Serial_title)
+    </dd>
+
+    <dt>Описание:</dt>
+    <dd>
+        @Html.DisplayFor(model => model.SerialDescription)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}
+
+

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MySerials.Models.Season>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div>
+        <h3>Главная страница</h3>
+    </div>
+
+<table class="table">
+    <tr>
+        <th>
+            Сериалы/
+            @Html.DisplayNameFor(model => model.Serial)
+        </th>
+        <th>
+            <div style="width:20px;"></div>
+        </th>
+        <th>
+            Сезоны/
+            @Html.DisplayNameFor(model => model.Season_title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serial.Serial_title)
+            </td>
+            <th>
+                <div style="width:20px;"></div>
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Season_title)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+
+

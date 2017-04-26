@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "SerialSeason";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>@ViewData["Name"]</h3>
+   
+    <table>
+        <tr>
+            @*<th><p>Название</p></th>*@
+            <th><p>Сезоны:</p></th>
+            <th></th>
+        </tr>
+        @foreach (var b in ViewBag.Seasons)
+            {
+                <tr>
+                    @*<td>@b.SerialId</td>*@
+                    <td><a href="/Home/SeasonSerie/@b.Id">@b.Season_title</a></td>
+                    @*<td><a href="/Home/SeasonSerie/@b.Id">Серии</a></td>*@
+                </tr>
+            }
+    </table>
+</div>

@@ -1,0 +1,50 @@
+﻿@model MySerials.Models.Season
+@{
+    ViewBag.Title = "SeasonEdit2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Добавление нового сезона</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Сезон</legend>
+
+        <p>
+            Название сезона <br />
+            @Html.EditorFor(model => model.Season_title)
+        </p>
+
+        <p>
+            Сериал <br />
+            @Html.DropDownListFor(model => model.SerialId, ViewBag.Serials as SelectList)
+        </p>
+
+        <p>
+            <input type="submit" value="Добавить сезон" />
+        </p>
+    </fieldset>
+}
+
+
+
+
+
+
+
+
+@*<div>
+    <h2>@Model.Season_title</h2>
+
+    @using (Html.BeginForm("SeasonEdit", "Edit", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.Id)
+        <p>
+            @Html.LabelFor(m => m.Season_title, "Название")
+            @Html.EditorFor(m => m.Season_title)
+        </p>
+
+        <input type="submit" />
+    }
+</div>*@

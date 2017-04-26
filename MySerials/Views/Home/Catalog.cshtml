@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Catalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Каталог сериалов</h3>
+    <table>
+        <tr>
+            <th>Название</th>
+            <th>Описание</th>
+            <td></td>
+        </tr>
+        @foreach (var b in ViewBag.Serials)
+            {
+            <tr>
+                <td><a href="/Home/SerialSeason/@b.Id">@b.Serial_title</a></td>
+                <td>@b.SerialDescription</td>
+                <td></td>
+            </tr>
+        }
+    </table>
+</div>

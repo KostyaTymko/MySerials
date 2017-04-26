@@ -1,0 +1,30 @@
+﻿@model MySerials.Models.Serie
+@{
+    ViewBag.Title = "SerieAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Добавление новой серии</h2>*@
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Добавление новой серии</legend>
+
+        <p>
+            Название серии <br />
+            @Html.EditorFor(model => model.Title)
+        </p>
+
+        <p>
+            Сезон <br />
+            @Html.DropDownListFor(model => model.SeasonId, ViewBag.Series as SelectList)
+        </p>
+
+        <p>
+            <input type="submit" value="Добавить серию" />
+        </p>
+    </fieldset>
+}
+
+

@@ -1,0 +1,22 @@
+﻿@model MySerials.Models.Season
+@{
+    ViewBag.Title = "SeasonEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Редактирование сезона:</h2>
+
+<div>
+    <h2>@Model.Season_title</h2>
+
+    @using (Html.BeginForm("SeasonEdit", "Edit", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.Id)
+        <p>
+            @Html.LabelFor(m => m.Season_title, "Название")
+            @Html.EditorFor(m => m.Season_title)
+        </p>
+
+        <input type="submit" />
+    }
+</div>

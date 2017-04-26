@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "SerialSeasonForEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Редактироване сезонов</h3>
+<h3>@ViewData["Name"]</h3>
+<div>
+    
+ 
+    <table>
+        <tr>
+            <th></th>
+            <th>Название сезона</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var b in ViewBag.Seasons)
+        {
+            
+            <tr> 
+                <td></td>               
+                <td><a href="/Edit/SeasonSerieForEdit/@b.Id">@b.Season_title</a></td>
+                <td><a href="/Edit/SeasonEdit/@b.Id">Редактировать</a></td>
+                <td><a href="/Edit/SeasonDelete/@b.Id">Удалить</a></td>
+            </tr>
+        }
+    </table>
+    
+</div>
+<div><h4><a href="/Edit/SeasonAdd/@ViewData["ID"]">Добавить сезон</a></h4></div>
+
+

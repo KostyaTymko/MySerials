@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    	<div class="main">
+		<div class="main_content">
+			<div class="logo"><a style="color:yellow;" href="~/Home/Index">My Serials</a></div>
+			<div class="content_block">
+				<div class="main_content_block">
+					<div class="navigation"><a class="mycolor" href="~/Home/Catalog">Каталог сериалов</a></div>
+					<div class="navigation"><a class="mycolor" href="~/Home/MySerials">Мои сериалы</a></div>
+					<div class="navigation"><a class="mycolor" href="~/Home/Schedule">Моё расписание</a></div>
+					<div class="navigation"><a class="mycolor" href="~/Home/Lists">Мои списки</a></div>
+					<div class="navigation"><a class="mycolor" href="~/Home/Rating">Рейтинг сериалов</a></div>
+					<div class="navigation"><a class="mycolor" href="~/Home/MyArticles">Статьи</a></div>
+				</div>
+				<div class="main_content_block">
+					<div class="navigation">
+						<form class="search" name="search" method="GET" action="">
+							<input type="text" name="search" value="" maxlength="80" placeholder="" style="border-radius:5px 5px 5px 5px;background:grey;">
+						</form>
+					</div>
+					<div class="navigation"></div>
+					<div class="navigation"></div>
+					<div class="navigation"></div>
+					<div class="navigation"><a class="mycolor" style="color:red" href="~/Edit/CatalogForEdit">Редактирование</a></div>
+					<div class="navigation">
+						<a href="" class="mycolor">Вход</a>
+						<span class="mycolor" >|</span>
+						<a href="" class="mycolor">Регистрация</a></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+    <div class="my_context">
+        <div class="my_main_context">
+            @RenderBody()
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+@*<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
+                    <li>@Html.ActionLink("О программе", "About", "Home")</li>
+                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>*@

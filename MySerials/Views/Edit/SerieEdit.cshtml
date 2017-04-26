@@ -1,0 +1,26 @@
+﻿@model MySerials.Models.Serie
+@{
+    ViewBag.Title = "SerieEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Редактирование серии:</h2>
+<div>
+    <h2>@Model.Title</h2>
+  
+    @using (Html.BeginForm("SerieEdit", "Edit", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.Id)
+        <p>
+            @Html.LabelFor(m => m.Title, "Название")
+            @Html.EditorFor(m =>m.Title)
+        </p>
+
+            @*<p>
+                @Html.LabelFor(m => m.Price, "Цена")
+                @Html.EditorFor(m => m.Price)
+            </p>*@
+            <input type="submit" />
+    }
+</div>
+

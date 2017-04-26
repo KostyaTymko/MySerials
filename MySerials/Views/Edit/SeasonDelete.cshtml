@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "SeasonDelete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model MySerials.Models.Season
+<h2>Удаление сезона</h2>
+<dl>
+    @*<dt>Название</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Id)
+    </dd>
+
+    <dt>Автор</dt>
+    <dd>
+        @Html.DisplayFor(model => model.SerialId)
+    </dd>*@
+
+    <dt>Название:</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Season_title)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}
+
