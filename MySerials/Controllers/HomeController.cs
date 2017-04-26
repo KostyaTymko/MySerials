@@ -81,6 +81,13 @@ namespace MySerials.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult Search(string Search)
+        {
+            //var seasons = db.Seasons.Include(s => s.Serial);
+            var seasons = db.Seasons.Where(s => s.Serial.Serial_title == Search);
+            return View(seasons.ToList());
+        }
 
     }
 }

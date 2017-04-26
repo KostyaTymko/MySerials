@@ -202,6 +202,7 @@
     <Content Include="Views\Edit\SeasonDelete.cshtml" />
     <Content Include="Views\Edit\SerialDelete.cshtml" />
     <Content Include="Views\Edit\SeasonAdd.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
