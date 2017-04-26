@@ -10,9 +10,9 @@ namespace MySerials.Models
     {
         protected override void Seed(SerialContext db)
         {
-            Serial one = new Serial { Serial_title = "Теория большого взрыва", SerialDescription = "Молодежный" };
-            Serial two = new Serial { Serial_title = "Сверхестественное", SerialDescription = "Мистика" };
-            Serial three = new Serial { Serial_title = "Доктор Хаус", SerialDescription = "Медицина" };
+            Serial one = new Serial { Serial_title = "Теория большого взрыва", SerialDescription = "Молодежный",Date= new DateTime(2015, 7, 20, 18, 30, 25) };
+            Serial two = new Serial { Serial_title = "Сверхестественное", SerialDescription = "Мистика", Date = new DateTime(2016, 7, 20, 18, 30, 25) };
+            Serial three = new Serial { Serial_title = "Доктор Хаус", SerialDescription = "Медицина", Date = new DateTime(2017, 7, 20, 18, 30, 25) };
             db.Serials.Add(one);
             db.Serials.Add(two);
             db.Serials.Add(three);
