@@ -10,7 +10,7 @@ using MySerials.Models;
 
 namespace MySerials.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController :Controller //
     {
         SerialContext db = new SerialContext();
         public ActionResult Index()
