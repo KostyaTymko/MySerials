@@ -15,7 +15,7 @@ namespace MySerials.Controllers
         SerialContext db = new SerialContext();
         public ActionResult Index()
         {
-            var seasons = db.Seasons.Include(s => s.Serial);
+            var seasons = db.Seasons.Include(s => s.Serial).OrderByDescending(u => u.Serial.Date);
             return View(seasons.ToList());
         }
 
@@ -85,7 +85,8 @@ namespace MySerials.Controllers
         public ActionResult Search(string Search)
         {
             //var seasons = db.Seasons.Include(s => s.Serial);
-            var seasons = db.Seasons.Where(s => s.Serial.Serial_title == Search);
+            //var seasons = db.Seasons.Where(s => s.Serial.Serial_title == Search);
+            var seasons = db.Seasons.Where(s => s.Serial.Serial_title.Contains(Search));
             return View(seasons.ToList());
         }
 

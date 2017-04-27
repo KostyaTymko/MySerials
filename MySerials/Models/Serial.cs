@@ -8,6 +8,8 @@ namespace MySerials.Models
     public class Serial
     {
         public int Id { get; set; }
+
+        public DateTime Date { get; set; }
         public string Serial_title { get; set; }
         public string SerialDescription { get; set; }
 
