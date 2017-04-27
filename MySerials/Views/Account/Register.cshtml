@@ -1,0 +1,20 @@
+﻿
+@model MySerials.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false)
+    <div>Email: @Html.EditorFor(model => model.Email)</div>
+    <div>Password: @Html.EditorFor(model => model.Password)</div>
+    <div>Comfirm password: @Html.EditorFor(model => model.ConfirmPassword)</div>
+
+    <div><input type="submit" value="Register" /></div>
+
+}
+
