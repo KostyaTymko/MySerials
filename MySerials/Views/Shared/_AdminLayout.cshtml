@@ -3,15 +3,56 @@
 }*@
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>!!!!!!!!!!!!!</title>
+    <meta charset="utf-8" />
+    <title>Авторизация пройдена</title>
+    @*<title>@ViewBag.Title</title>*@
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-    <div>
-    
+    <div class="main">
+        <div class="main_content">
+            <div class="logo"><a style="color:yellow;" href="~/Account/Index">My Serials</a></div>
+            <div class="content_block">
+                <div class="main_content_block">
+                    <div class="navigation"><a class="mycolor" href="~/Account/Catalog">Каталог сериалов</a></div>
+                    <div class="navigation"><a class="mycolor" href="~/Account/MySerials">Мои сериалы</a></div>
+                    <div class="navigation"><a class="mycolor" href="~/Account/Schedule">Моё расписание</a></div>
+                    <div class="navigation"><a class="mycolor" href="~/Account/Lists">Мои списки</a></div>
+                    @*<div class="navigation"><a class="mycolor" href="~/Home/Rating">Рейтинг сериалов</a></div>*@
+                    <div class="navigation"><a class="mycolor" style="color:red" href="~/Edit/CatalogForEdit">Редактирование</a></div>
+                    <div class="navigation"><a class="mycolor" href="~/Account/MyArticles">Статьи</a></div>
+                </div>
+                <div class="main_content_block">
+                    <div class="navigation">
+                        <form class="search" name="search" method="GET" action="~/Account/Search">
+                            <input type="text" name="search" value="" maxlength="80" placeholder="" style="border-radius:5px 5px 5px 5px;background:grey;">
+                        </form>
+                    </div>
+                    <div class="navigation"></div>
+                    <div class="navigation"></div>
+                    <div class="navigation"></div>
+                    <div class="navigation"></div>
+                    @*<div class="navigation"><a class="mycolor" style="color:red" href="~/Edit/CatalogForEdit">Редактирование</a></div>*@
+                    <div class="navigation">
+                        <a href="~/Account/LogOut" class="mycolor">Выход</a>
+                        @*<span class="mycolor">|</span>
+                        <a href="~/Account/Register" class="mycolor">Регистрация</a>*@
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+    <div class="my_context">
+        <div class="my_main_context">
+            @RenderBody()
+        </div>
+    </div>
+
 </body>
 </html>
+

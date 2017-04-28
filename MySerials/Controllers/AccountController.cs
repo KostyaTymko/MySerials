@@ -10,11 +10,59 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
+using System.Data;
+using System.Data.Entity;
+
+using System.Net;
+
+
+
+
 namespace MySerials.Controllers
 {
 
     public class AccountController : Controller
     {
+        MainFunction a = new MainFunction();
+        SerialContext db = new SerialContext();
+        public ActionResult Index()
+        {
+             return View("~/Views/Home/Index.cshtml", "_AdminLayout",a.Index());
+        }
+
+        public ActionResult Catalog()
+        {
+            IEnumerable<Serial> serials = db.Serials;
+            ViewBag.Serials = serials;
+            return View("~/Views/Home/Catalog.cshtml", "_AdminLayout", ViewBag.Serials);
+        }
+
+        public ActionResult Search(string Search)
+        {
+            return View("~/Views/Account/Search.cshtml", "_AdminLayout", a.Search(Search));
+        }
+
+        public ActionResult MyArticles()
+        {
+            return View("~/Views/Home/MyArticles.cshtml","_AdminLayout");
+        }
+
+        public ActionResult MySerials()
+        {
+            return View("~/Views/Home/MySerials.cshtml", "_AdminLayout");
+        }
+
+        public ActionResult Schedule()
+        {
+            return View("~/Views/Home/Schedule.cshtml", "_AdminLayout");
+        }
+
+        public ActionResult Lists()
+        {
+            return View("~/Views/Home/Lists.cshtml", "_AdminLayout");
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------
         private UserManager UserManager
         {
             get { return HttpContext.GetOwinContext().GetUserManager<UserManager>(); }
@@ -61,6 +109,7 @@ namespace MySerials.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
+            //return View("Login", "_AdminLayout");
         }
 
         [HttpPost]
@@ -84,7 +133,7 @@ namespace MySerials.Controllers
                      );
                     if (String.IsNullOrEmpty(returnUrl))
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Account");
                     }
                     else
                     {
@@ -100,7 +149,7 @@ namespace MySerials.Controllers
         public ActionResult LogOut()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index","Home");
         }
     }
 }

@@ -1,15 +1,7 @@
-﻿
-@*@{
-    ViewBag.Title = "Search";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
-
-<h2>Search</h2>*@
-
-@model IEnumerable<MySerials.Models.Season>
+﻿@model IEnumerable<MySerials.Models.Season>
 @{
-    ViewBag.Title = "Результаты поиска";
-    //Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div>
     <h3>Результаты поиска:</h3>
@@ -34,8 +26,7 @@
 </div>
 
 <hr />
-<div><a href="~/Home/Index">На главную</a></div>
-
+<div><a  href="~/Home/Index">На главную</a></div>
 
 
 

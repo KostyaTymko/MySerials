@@ -13,17 +13,25 @@ namespace MySerials.Controllers
     public class HomeController : Controller
     {
         SerialContext db = new SerialContext();
+        MainFunction a = new MainFunction();
         public ActionResult Index()
         {
-            var seasons = db.Seasons.Include(s => s.Serial).OrderByDescending(u => u.Serial.Date);
-            return View(seasons.ToList());
+            // var seasons = db.Seasons.Include(s => s.Serial).OrderByDescending(u => u.Serial.Date);
+            // return View(seasons.ToList());
+            //return View(a.Index());
+            return View("~/Views/Home/Index.cshtml", "_Layout", a.Index());
         }
-
         public ActionResult Catalog()
         {
             IEnumerable<Serial> serials = db.Serials;
             ViewBag.Serials = serials;
-            return View();
+            return View("~/Views/Home/Catalog.cshtml", "_Layout");
+        }
+
+        // [HttpGet]
+        public ActionResult Search(string Search)
+        {
+            return View("~/Views/Home/Search.cshtml", "_Layout",a.Search(Search));
         }
 
         [HttpGet]
@@ -80,14 +88,6 @@ namespace MySerials.Controllers
         public ActionResult Lists()
         {
             return View();
-        }
-        [HttpGet]
-        public ActionResult Search(string Search)
-        {
-            //var seasons = db.Seasons.Include(s => s.Serial);
-            //var seasons = db.Seasons.Where(s => s.Serial.Serial_title == Search);
-            var seasons = db.Seasons.Where(s => s.Serial.Serial_title.Contains(Search));
-            return View(seasons.ToList());
         }
 
     }
